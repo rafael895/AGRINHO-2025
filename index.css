@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+  padding: 0;
+}
+
+
+.cb{
+    background-color: rgba(38, 114, 38, 0.986);
+    height: 130px;
+  width: 2000px;
+}
+.tt{
+    text-align: center;
+    padding-top: 30px;
+    padding-right: 100px;
+    color: #fff;
+}
+.bd2 {
+    justify-content: center;
+    align-items: center;
+    padding-right: 300px;
+    min-height: 100vh;
+    background: #fff;
+    
+    }
+    .td{
+        margin-top: 110px;
+    left: 250px;
+        position: relative;
+       display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 1200px;
+        flex-wrap: wrap;
+        z-index: 1;
+    
+    
+    }
+    .td .card {
+        position: relative;
+        width: 280px;
+        height: 400px;
+        margin: 30px;
+        background: rgba( 255,255,255,255,0.1);
+        box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+        border-radius: 15px;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 15px;
+       border-top:1px solid rgba(255, 255, 255, 0.5);
+       border-left:1px solid rgba(255, 255, 255, 0.5);
+    }
+    .td .card .efeito {
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: 0.5s;
+    }
+     .td .card :hover.efeito { 
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    .im1{
+        padding-bottom: 30px;
+ width: 530px;
+    }
+    .im2{
+        width: 540px;
+    padding-bottom: 20px;
+    gap: 10px;
+
+    }
+    .im3{
+        width: 540px;
+    padding-bottom: 30px;
+    gap: 10px;
+
+    }
+

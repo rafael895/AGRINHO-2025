@@ -1,0 +1,36 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgba(38, 114, 38, 0.986);
+}
+.td{
+    font-size: 15px;
+    padding-left: 50px;
+    padding-top: 70px;
+}
+.pt2{
+    padding-top: 10px;
+}
+.pt3{
+    padding-top: 10px;
+}
+.pt4{
+    padding-top: 10px;
+}
+
+.tt{
+    text-align: center;
+    padding-top: 30px;
+}
+.pt5{
+    padding-top: 10px;
+}
+.pt6{
+    padding-top: 10px;
+}
+.pt7{
+    padding-top: 10px;
+}
