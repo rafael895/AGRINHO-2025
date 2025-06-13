@@ -5,28 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Notícias do Campo</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f0fdf4;
-      color: #333;
+      font-family: 'Georgia', serif;
+      background-color: #f0f0f0;
     }
+
+    /* Cabeçalho */
     header {
-      background-color: #166534;
-      color: white;
-      padding: 20px;
+      background-color: #063103;
+      padding: 15px 30px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
-    header h1 {
-      margin: 0;
-      font-size: 32px;
+
+    .basico {
+      display: flex;
+      align-items: center;
+      gap: 15px;
     }
+
+    .basico img {
+      height: 50px;
+    }
+
+    .basico h1 {
+      font-size: 1.5em;
+      color: #fff;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+       gap: 25px;
+    }
+
     nav a {
-      color: white;
-      margin-left: 15px;
       text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s;
     }
+
     nav a:hover {
-      text-decoration: underline;
+      color: #3498db;
+    }
+
+    .pesquisa {
+      margin-top: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+     
+    }
+
+    .pesquisa input {
+      width: 100%;
+      max-width: 400px;
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
     }
     .container {
       max-width: 1100px;
@@ -96,17 +143,21 @@
   </style>
 </head>
 <body>
-
-  <!-- Cabeçalho -->
   <header>
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-      <h1>Notícias do Campo</h1>
-      <nav>
-        <a href="#">Início</a>
-        <a href="#">Agricultura</a>
-        <a href="#">Pecuária</a>
-        <a href="#">Sustentabilidade</a>
-      </nav>
+    <div class="basico">
+      <img src="logo.png" alt="Logo do site">
+      <h1>BLOG DO LUPIO</h1>
+    </div>
+
+    <nav>
+      <a href="noticias.html">Notícias</a>
+      <a href="descoberta.html">Descobertas</a>
+      <a href="stude.html">Área de Estudo</a>
+      <a href="cotacao.html">Cotação</a>
+    </nav>
+
+    <div class="pesquisa">
+      <input type="text" placeholder="Pesquisar no site...">
     </div>
   </header>
 
