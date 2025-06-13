@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notícias do Campo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0fdf4;
+      color: #333;
+    }
+    header {
+      background-color: #166534;
+      color: white;
+      padding: 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+    nav a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .highlight {
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+    .highlight img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .highlight .content {
+      padding: 20px;
+    }
+    .highlight h2 {
+      color: #166534;
+      margin-top: 0;
+    }
+    .news-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .news-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+      flex: 1 1 calc(33.33% - 20px);
+      min-width: 250px;
+    }
+    .news-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .news-card .content {
+      padding: 15px;
+    }
+    .news-card h4 {
+      color: #15803d;
+      margin: 0;
+    }
+    .news-card p {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    footer {
+      background-color: #166534;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    @media (max-width: 768px) {
+      .news-grid {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <h1>Notícias do Campo</h1>
+      <nav>
+        <a href="#">Início</a>
+        <a href="#">Agricultura</a>
+        <a href="#">Pecuária</a>
+        <a href="#">Sustentabilidade</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Destaque -->
+  <section class="container">
+    <div class="highlight">
+      <img src="https://source.unsplash.com/featured/?farm" alt="Notícia principal">
+      <div class="content">
+        <h2>Safra 2025 promete ser uma das melhores da década</h2>
+        <p>Produtores de diversas regiões comemoram os bons resultados da produção de grãos e hortaliças, impulsionados pelas chuvas regulares e boas práticas de manejo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grade de Notícias -->
+  <section class="container">
+    <h3 style="color:#14532d; font-size: 24px; margin-bottom: 20px;">Últimas Notícias</h3>
+    <div class="news-grid">
+      
+      <div class="news-card">
+        <img src="https://source.unsplash.com/featured/?cow" alt="Gado">
+        <div class="content">
+          <h4>Criação de gado leiteiro cresce no Sul</h4>
+          <p>Tecnologias e manejo sustentável elevam produtividade em propriedades familiares.</p>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <img src="https://source.unsplash.com/featured/?tractor" alt="Trator">
+        <div class="content">
+          <h4>Feira Agro 2025 movimenta setor</h4>
+          <p>Novidades em máquinas agrícolas e soluções digitais atraem visitantes do Brasil inteiro.</p>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <img src="https://source.unsplash.com/featured/?organic" alt="Orgânicos">
+        <div class="content">
+          <h4>Produção orgânica cresce 30%</h4>
+          <p>Agricultura familiar impulsiona alimentos saudáveis e sustentáveis nas feiras urbanas.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 Notícias do Campo. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
