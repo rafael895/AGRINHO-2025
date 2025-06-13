@@ -246,37 +246,7 @@
     </main>
   </section>
 
-  <!-- Cotação -->
-  <section id="cotacao" class="container">
-    <h1>💱 Cotações em Tempo Real</h1>
-    <div class="moeda">Dólar (USD): <span class="valor" id="usd">--</span></div>
-    <div class="moeda">Euro (EUR): <span class="valor" id="eur">--</span></div>
-    <div class="moeda">Bitcoin (BTC): <span class="valor" id="btc">--</span></div>
-    <div class="atualizado" id="hora">Atualizando...</div>
-  </section>
-
-  <!-- Script de Cotação -->
-  <script>
-    async function carregarCotacoes() {
-      try {
-        const resposta = await fetch('https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL');
-        const dados = await resposta.json();
-
-        document.getElementById('usd').textContent = `R$ ${parseFloat(dados.USDBRL.bid).toFixed(2)}`;
-        document.getElementById('eur').textContent = `R$ ${parseFloat(dados.EURBRL.bid).toFixed(2)}`;
-        document.getElementById('btc').textContent = `R$ ${parseFloat(dados.BTCBRL.bid).toFixed(0)}`;
-
-        const agora = new Date().toLocaleTimeString('pt-BR');
-        document.getElementById('hora').textContent = `Atualizado às ${agora}`;
-      } catch (error) {
-        console.error('Erro ao carregar cotações:', error);
-        document.getElementById('hora').textContent = 'Erro ao buscar dados';
-      }
-    }
-
-    carregarCotacoes();
-    setInterval(carregarCotacoes, 30000);
-  </script>
+  
 
 </body>
 </html>
