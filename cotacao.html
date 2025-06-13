@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cotações do Mercado Agrofinanceiro</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .cotacoes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .item {
+      background-color: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      width: 200px;
+      text-align: center;
+    }
+    .item h2 {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      color: #555;
+    }
+    .item span {
+      font-size: 1.4em;
+      color: #27ae60;
+    }
+    .atualizado {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #777;
+    }
+    .grafico-container {
+      max-width: 800px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>Cotações em Tempo Real</h1>
+  <div class="cotacoes">
+    <div class="item"><h2>Dólar</h2><span id="usd">--</span></div>
+    <div class="item"><h2>Euro</h2><span id="eur">--</span></div>
+    <div class="item"><h2>Bitcoin</h2><span id="btc">--</span></div>
+    <div class="item"><h2>Ibovespa</h2><span id="ibov">--</span></div>
+    <div class="item"><h2>Soja</h2><span id="soja">--</span></div>
+    <div class="item"><h2>Milho</h2><span id="milho">--</span></div>
+    <div class="item"><h2>Trigo</h2><span id="trigo">--</span></div>
+    <div class="item"><h2>Café</h2><span id="cafe">--</span></div>
+    <div class="item"><h2>Petróleo</h2><span id="petroleo">--</span></div>
+    <div class="item"><h2>Algodão</h2><span id="algodao">--</span></div>
+    <div class="item"><h2>Boi Gordo</h2><span id="boi">--</span></div>
+  </div>
+
+  <div class="grafico-container">
+    <canvas id="graficoCommodities"></canvas>
+  </div>
+
+  <div class="atualizado" id="atualizacao">Atualizando...</div>
+
+  <script>
+    async function buscarCotacoes() {
+      try {
+        const moedas = await fetch('https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL');
+        const dadosMoedas = await moedas.json();
+
+        document.getElementById('usd').textContent = `R$ ${parseFloat(dadosMoedas.USDBRL.bid).toFixed(2)}`;
+        document.getElementById('eur').textContent = `R$ ${parseFloat(dadosMoedas.EURBRL.bid).toFixed(2)}`;
+        document.getElementById('btc').textContent = `R$ ${parseFloat(dadosMoedas.BTCBRL.bid).toFixed(0)}`;
+
+        const simulacoes = {
+          ibov: 126540,
+          soja: 144,
+          milho: 62.3,
+          trigo: 58.9,
+          cafe: 842,
+          petroleo: 77.2,
+          algodao: 190.5,
+          boi: 235.4
+        };
+
+        for (let id in simulacoes) {
+          document.getElementById(id).textContent = `R$ ${simulacoes[id].toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
+        }
+
+        const agora = new Date().toLocaleTimeString('pt-BR');
+        document.getElementById('atualizacao').textContent = `Última atualização: ${agora}`;
+
+        atualizarGrafico(simulacoes);
+      } catch (error) {
+        console.error('Erro ao buscar cotações:', error);
+        document.getElementById('atualizacao').textContent = 'Erro ao atualizar dados.';
+      }
+    }
+
+    let grafico;
+    function atualizarGrafico(dados) {
+      const ctx = document.getElementById('graficoCommodities').getContext('2d');
+      const labels = Object.keys(dados).map(k => k.toUpperCase());
+      const valores = Object.values(dados);
+
+      if (grafico) {
+        grafico.data.labels = labels;
+        grafico.data.datasets[0].data = valores;
+        grafico.update();
+        return;
+      }
+
+      grafico = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Valor em R$',
+            data: valores,
+            backgroundColor: '#3498db'
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: false
+            }
+          }
+        }
+      });
+    }
+
+    buscarCotacoes();
+    setInterval(buscarCotacoes, 30000);
+  </script>
+</body>
+</html>
