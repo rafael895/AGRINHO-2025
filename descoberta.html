@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Descubra Conteúdos do Campo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0fdf4;
+      color: #333;
+    }
+    header {
+      background-color: #166534;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .categories {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+      justify-content: center;
+    }
+    .category-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 20px;
+      flex: 1 1 200px;
+      max-width: 250px;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .category-card:hover {
+      background-color: #d1fae5;
+    }
+    .category-card h3 {
+      color: #166534;
+      margin: 10px 0 5px;
+    }
+    .category-card p {
+      font-size: 14px;
+      color: #555;
+    }
+    .featured-section {
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      margin-bottom: 40px;
+      padding: 20px;
+    }
+    .featured-section h2 {
+      color: #166534;
+      margin-top: 0;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    .featured-grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .featured-card {
+      flex: 1 1 280px;
+      max-width: 320px;
+      background-color: #ecfdf5;
+      border-radius: 12px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .featured-card:hover {
+      transform: scale(1.03);
+    }
+    .featured-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .featured-card .content {
+      padding: 15px;
+    }
+    .featured-card h4 {
+      margin: 0 0 10px 0;
+      color: #065f46;
+    }
+    .featured-card p {
+      font-size: 14px;
+      color: #334155;
+    }
+    footer {
+      background-color: #166534;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    @media (max-width: 768px) {
+      .categories, .featured-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      .category-card, .featured-card {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Descubra Conteúdos do Campo</h1>
+  </header>
+
+  <div class="container">
+
+    <!-- Categorias para explorar -->
+    <section class="categories" aria-label="Categorias para explorar">
+      <div class="category-card" tabindex="0">
+        <h3>Cultura Rural</h3>
+        <p>Tradições, festas e histórias do campo.</p>
+      </div>
+      <div class="category-card" tabindex="0">
+        <h3>Alimentação Saudável</h3>
+        <p>Do cultivo ao prato, dicas e receitas.</p>
+      </div>
+      <div class="category-card" tabindex="0">
+        <h3>Empreendedorismo</h3>
+        <p>Negócios rurais e urbanos inovadores.</p>
+      </div>
+      <div class="category-card" tabindex="0">
+        <h3>Sustentabilidade</h3>
+        <p>Práticas que respeitam o meio ambiente.</p>
+      </div>
+    </section>
+
+    <!-- Conteúdos em destaque -->
+    <section class="featured-section" aria-label="Conteúdos em destaque">
+      <h2>Destaques da Semana</h2>
+      <div class="featured-grid">
+
+        <div class="featured-card" tabindex="0">
+          <img src="https://source.unsplash.com/featured/?farmers-market" alt="Feira">
+          <div class="content">
+            <h4>Feira Orgânica atrai público jovem</h4>
+            <p>Comida saudável e ambiente sustentável em crescimento nas cidades.</p>
+          </div>
+        </div>
+
+        <div class="featured-card" tabindex="0">
+          <img src="https://source.unsplash.com/featured/?tractor-field" alt="Trator no campo">
+          <div class="content">
+            <h4>Novas tecnologias facilitam o plantio</h4>
+            <p>Equipamentos modernos que aumentam a produtividade e reduzem impactos ambientais.</p>
+          </div>
+        </div>
+
+        <div class="featured-card" tabindex="0">
+          <img src="https://source.unsplash.com/featured/?handshake" alt="Aperto de mãos">
+          <div class="content">
+            <h4>Empreendedores rurais inovam com cooperativas</h4>
+            <p>Parcerias que fortalecem comunidades e geram renda.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Descubra Conteúdos do Campo</p>
+  </footer>
+
+</body>
+</html>
