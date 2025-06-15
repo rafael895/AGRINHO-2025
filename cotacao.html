@@ -263,39 +263,6 @@
     });
   }
 }
- {
-      const ctx = document.getElementById('graficoCommodities').getContext('2d');
-      const labels = Object.keys(dados).map(k => k.toUpperCase());
-      const valores = Object.values(dados);
-
-      if (grafico) {
-        grafico.data.labels = labels;
-        grafico.data.datasets[0].data = valores;
-        grafico.update();
-        return;
-      }
-
-      grafico = new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: labels,
-          datasets: [{
-            label: 'Valor em R$',
-            data: valores,
-            backgroundColor: '#3498db'
-          }]
-        },
-        options: {
-          responsive: true,
-          scales: {
-            y: {
-              beginAtZero: false
-            }
-          }
-        }
-      });
-    }
-
     buscarCotacoes();
     setInterval(buscarCotacoes, 30000);
   </script>
