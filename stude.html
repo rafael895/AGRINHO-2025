@@ -14,9 +14,11 @@
     body {
       font-family: 'Georgia', serif;
       background-color: #f0f0f0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
-    /* Cabeçalho */
     header {
       background-color: #063103;
       padding: 15px 30px;
@@ -45,7 +47,7 @@
     nav {
       display: flex;
       align-items: center;
-       gap: 25px;
+      gap: 25px;
     }
 
     nav a {
@@ -60,11 +62,10 @@
     }
 
     .pesquisa {
-      margin-top: 10px;
       width: 100%;
       display: flex;
       justify-content: center;
-     
+      margin-top: 10px;
     }
 
     .pesquisa input {
@@ -74,22 +75,67 @@
       border: 1px solid #ccc;
       border-radius: 6px;
       font-size: 1em;
+    }
+
+    .conteudo {
+      max-width: 1000px;
+      width: 100%;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .conteudo h1 {
+      text-align: center;
+      color: #166534;
+      font-size: 2.2em;
+      margin-bottom: 30px;
+    }
+
+    .cursos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .curso {
+      background-color: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: background 0.3s;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .curso:hover {
+      background-color: #e6f4ea;
+    }
+
+    .curso h2 {
+      color: #14532d;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    .curso p {
+      color: #444;
+      font-size: 0.95em;
+    }
 
     footer {
       background-color: #166534;
       color: white;
       text-align: center;
       padding: 20px;
-      margin-top: 40px;
-    }
+      margin-top: auto;
     }
   </style>
 </head>
-<body class="bg-green-50 min-h-screen flex items-center justify-center px-4">
+<body>
   <header>
     <div class="basico">
       <a href="teste.html">
-      <img src="logo.png" alt="Logo do site">
+        <img src="logo.png" alt="Logo do site">
       </a>
       <h1>BLOG DO LUPIO</h1>
     </div>
@@ -105,29 +151,30 @@
       <input type="text" placeholder="Pesquisar no site...">
     </div>
   </header>
-  <div class="max-w-4xl w-full">
-    <h1 class="text-4xl font-bold text-center mb-10 text-green-800">Escolha seu Curso</h1>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      
-      <a href="cultura.html" class="bg-white rounded-2xl shadow-lg p-6 hover:bg-green-100 transition-all duration-300">
-        <h2 class="text-xl font-semibold text-green-900 mb-2">Cultura e Tradições do Campo</h2>
-        <p class="text-gray-700">Explore os saberes populares, festas, práticas agrícolas e a importância da vida rural para a identidade cultural brasileira.</p>
+
+  <div class="conteudo">
+    <h1>Escolha seu Curso</h1>
+    <div class="cursos">
+      <a href="cultura.html" class="curso">
+        <h2>Cultura e Tradições do Campo</h2>
+        <p>Explore os saberes populares, festas, práticas agrícolas e a importância da vida rural para a identidade cultural brasileira.</p>
       </a>
 
-      <a href="alimentar.html" class="bg-white rounded-2xl shadow-lg p-6 hover:bg-green-100 transition-all duration-300">
-        <h2 class="text-xl font-semibold text-green-900 mb-2">Educação Alimentar: Da Roça ao Prato</h2>
-        <p class="text-gray-700">Aprenda sobre alimentação saudável, o ciclo dos alimentos e a valorização da produção local no cotidiano.</p>
+      <a href="alimentar.html" class="curso">
+        <h2>Educação Alimentar: Da Roça ao Prato</h2>
+        <p>Aprenda sobre alimentação saudável, o ciclo dos alimentos e a valorização da produção local no cotidiano.</p>
       </a>
 
-      <a href="empreender.html" class="bg-white rounded-2xl shadow-lg p-6 hover:bg-green-100 transition-all duration-300">
-        <h2 class="text-xl font-semibold text-green-900 mb-2">Empreendedorismo Rural e Urbano</h2>
-        <p class="text-gray-700">Descubra como transformar ideias em negócios sustentáveis no campo e na cidade, com foco na inovação social.</p>
+      <a href="empreender.html" class="curso">
+        <h2>Empreendedorismo Rural e Urbano</h2>
+        <p>Descubra como transformar ideias em negócios sustentáveis no campo e na cidade, com foco na inovação social.</p>
       </a>
-
     </div>
   </div>
+
   <footer>
     <p>&copy; Blog do Lupio. Todos os direitos reservados.</p>
   </footer>
 </body>
 </html>
+
