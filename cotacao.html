@@ -162,9 +162,20 @@
     <div class="item"><h2>Boi Gordo</h2><span id="boi">--</span></div>
   </div>
 
-  <div class="grafico-container">
-    <canvas id="graficoCommodities"></canvas>
-  </div>
+  <h1 style="margin-top: 40px;">Gráficos das Cotações</h1>
+<div class="cotacoes" style="flex-wrap: wrap;">
+  <div class="grafico-container"><h3>Dólar</h3><canvas id="graficoUSD"></canvas></div>
+  <div class="grafico-container"><h3>Euro</h3><canvas id="graficoEUR"></canvas></div>
+  <div class="grafico-container"><h3>Bitcoin</h3><canvas id="graficoBTC"></canvas></div>
+  <div class="grafico-container"><h3>Soja</h3><canvas id="graficoSoja"></canvas></div>
+  <div class="grafico-container"><h3>Milho</h3><canvas id="graficoMilho"></canvas></div>
+  <div class="grafico-container"><h3>Trigo</h3><canvas id="graficoTrigo"></canvas></div>
+  <div class="grafico-container"><h3>Café</h3><canvas id="graficoCafe"></canvas></div>
+  <div class="grafico-container"><h3>Petróleo</h3><canvas id="graficoPetroleo"></canvas></div>
+  <div class="grafico-container"><h3>Algodão</h3><canvas id="graficoAlgodao"></canvas></div>
+  <div class="grafico-container"><h3>Boi Gordo</h3><canvas id="graficoBoi"></canvas></div>
+</div>
+
 
   <div class="atualizado" id="atualizacao">Atualizando...</div>
 
@@ -205,6 +216,54 @@
 
     let grafico;
     function atualizarGrafico(dados) {
+  const simulados = {
+    USD: parseFloat(document.getElementById('usd').textContent.replace('R$', '').replace(',', '.')),
+    EUR: parseFloat(document.getElementById('eur').textContent.replace('R$', '').replace(',', '.')),
+    BTC: parseFloat(document.getElementById('btc').textContent.replace('R$', '').replace('.', '').replace(',', '.')),
+    Soja: dados.soja,
+    Milho: dados.milho,
+    Trigo: dados.trigo,
+    Café: dados.cafe,
+    Petróleo: dados.petroleo,
+    Algodão: dados.algodao,
+    Boi: dados.boi
+  };
+
+  const cores = '#27ae60';
+  for (const [nome, valor] of Object.entries(simulados)) {
+    const canvasId = 'grafico' + nome.replace('ó', 'o').replace('ã', 'a');
+    const ctx = document.getElementById(canvasId);
+    if (!ctx) continue;
+
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Hoje'],
+        datasets: [{
+          label: `Cotação de ${nome}`,
+          data: [valor],
+          fill: false,
+          borderColor: cores,
+          tension: 0.1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: false
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: false
+          }
+        }
+      }
+    });
+  }
+}
+ {
       const ctx = document.getElementById('graficoCommodities').getContext('2d');
       const labels = Object.keys(dados).map(k => k.toUpperCase());
       const valores = Object.values(dados);
