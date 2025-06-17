@@ -46,7 +46,7 @@
 
     nav {
       display: flex;
-      align-items: center;
+      flex-wrap: wrap;
       gap: 25px;
     }
 
@@ -78,7 +78,7 @@
     }
 
     .conteudo {
-      max-width: 1000px;
+      max-width: 1100px;
       width: 100%;
       margin: 40px auto;
       padding: 0 20px;
@@ -94,32 +94,36 @@
     .cursos {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      gap: 25px;
     }
 
     .curso {
       background-color: white;
       border-radius: 12px;
       padding: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: background 0.3s;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
       text-decoration: none;
       color: inherit;
     }
 
     .curso:hover {
+      transform: scale(1.03);
       background-color: #e6f4ea;
     }
 
-    .curso h2 {
-      color: #14532d;
-      font-size: 1.2em;
-      margin-bottom: 10px;
+    .curso img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
     }
 
     .curso p {
       color: #444;
-      font-size: 0.95em;
+      font-size: 0.96em;
+      line-height: 1.4em;
     }
 
     footer {
@@ -129,13 +133,25 @@
       padding: 20px;
       margin-top: auto;
     }
+
+    @media (max-width: 600px) {
+      .basico h1 {
+        font-size: 1.2em;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 15px;
+        margin-top: 10px;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="basico">
       <a href="index.html">
-        <img src="logo.png" alt="Logo do site">
+        <img src="logo.png" alt="Logo do Blog do Lupio">
       </a>
       <h1>BLOG DO LUPIO</h1>
     </div>
@@ -152,29 +168,28 @@
     </div>
   </header>
 
-  <div class="conteudo">
+  <main class="conteudo">
     <h1>Escolha seu Curso</h1>
     <div class="cursos">
       <a href="cultura.html" class="curso">
-        <h2>Cultura e Tradições do Campo</h2>
+        <img src="cult.png" alt="Cultura e Tradições do Campo">
         <p>Explore os saberes populares, festas, práticas agrícolas e a importância da vida rural para a identidade cultural brasileira.</p>
       </a>
 
       <a href="alimentar.html" class="curso">
-        <h2>Educação Alimentar: Da Roça ao Prato</h2>
+        <img src="prato.png" alt="Educação Alimentar: Da Roça ao Prato">
         <p>Aprenda sobre alimentação saudável, o ciclo dos alimentos e a valorização da produção local no cotidiano.</p>
       </a>
 
       <a href="empreender.html" class="curso">
-        <h2>Empreendedorismo Rural e Urbano</h2>
+        <img src="emp.png" alt="Empreendedorismo Rural e Urbano">
         <p>Descubra como transformar ideias em negócios sustentáveis no campo e na cidade, com foco na inovação social.</p>
       </a>
     </div>
-  </div>
+  </main>
 
   <footer>
     <p>&copy; Blog do Lupio. Todos os direitos reservados.</p>
   </footer>
 </body>
 </html>
-
