@@ -175,33 +175,58 @@
       color: white;
       text-decoration: none;
     }
+    .destaques {
+  background-color: #ffffff;
+  padding: 50px 20px;
+}
 
-    /* Cotação */
-    .container {
-      background: #fff;
-      padding: 30px;
-      max-width: 500px;
-      margin: 50px auto;
-      text-align: center;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
+.destaques-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
 
-    .container h1 {
-      font-size: 1.5em;
-      margin-bottom: 15px;
-      color: #2c3e50;
-    }
+.destaques h2 {
+  font-size: 2em;
+  color: #166534;
+  margin-bottom: 30px;
+}
 
-    .moeda {
-      font-size: 1.2em;
-      margin: 10px 0;
-    }
+.destaques-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
 
-    .valor {
-      font-weight: bold;
-      color: #27ae60;
-    }
+.dest-card {
+  background-color: #ecfdf5;
+  border: 1px solid #d1fae5;
+  border-radius: 12px;
+  padding: 25px;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dest-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.dest-card h3 {
+  color: #065f46;
+  margin-bottom: 10px;
+}
+
+.dest-card p {
+  color: #333;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+
+ 
 
     .atualizado {
       font-size: 0.9em;
@@ -331,6 +356,39 @@
       <div class="noticia">☀️ Clima favorável impulsiona expectativas no agronegócio.</div>
     </div>
   </section>
+<section class="destaques">
+  <div class="destaques-container">
+    <h2>Destaques em Empreendedorismo</h2>
+    <div class="destaques-cards">
+
+      <div class="dest-card">
+        <h3>O que é Empreendedorismo?</h3>
+        <p>Entenda como identificar oportunidades e transformar ideias em soluções que geram valor social e econômico.</p>
+      </div>
+
+      <div class="dest-card">
+        <h3>Empreendimentos no Campo e na Cidade</h3>
+        <p>Conheça as diferenças, desafios e oportunidades de empreender em realidades distintas, mas complementares.</p>
+      </div>
+
+      <div class="dest-card">
+        <h3>Modelagem de Negócios</h3>
+        <p>Descubra como planejar sua ideia desde o início usando ferramentas como o Canvas e monte seu plano de ação.</p>
+      </div>
+
+      <div class="dest-card">
+        <h3>Economia Solidária e Cooperativas</h3>
+        <p>Aprenda sobre empreendimentos coletivos, sustentáveis e solidários que fortalecem comunidades.</p>
+      </div>
+
+      <div class="dest-card">
+        <h3>Marketing e Canais de Venda</h3>
+        <p>Saiba como divulgar seus produtos, usar redes sociais e aproveitar feiras e parcerias locais para crescer.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <footer>
     <p>&copy; Blog do Lupio. Todos os direitos reservados.</p>
