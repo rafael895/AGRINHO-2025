@@ -24,7 +24,7 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      gap: 10px;
     }
 
     .basico {
@@ -45,7 +45,8 @@
     nav {
       display: flex;
       align-items: center;
-       gap: 25px;
+      gap: 25px;
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -60,11 +61,9 @@
     }
 
     .pesquisa {
-      margin-top: 10px;
       width: 100%;
       display: flex;
       justify-content: center;
-     
     }
 
     .pesquisa input {
@@ -75,11 +74,13 @@
       border-radius: 6px;
       font-size: 1em;
     }
+
     .container {
       max-width: 1100px;
       margin: 0 auto;
       padding: 20px;
     }
+
     .featured-section {
       background-color: white;
       border-radius: 16px;
@@ -88,20 +89,23 @@
       margin-bottom: 40px;
       padding: 20px;
     }
+
     .featured-section h2 {
       color: #166534;
       margin-top: 0;
       margin-bottom: 15px;
       text-align: center;
     }
+
     .featured-grid {
       display: flex;
-      gap: 20px;
       flex-wrap: wrap;
+      gap: 20px;
       justify-content: center;
     }
+
     .featured-card {
-      flex: 1 1 280px;
+      flex: 1 1 300px;
       max-width: 320px;
       background-color: #ecfdf5;
       border-radius: 12px;
@@ -109,50 +113,80 @@
       overflow: hidden;
       cursor: pointer;
       transition: transform 0.2s ease;
+      display: flex;
+      flex-direction: column;
     }
+
     .featured-card:hover {
       transform: scale(1.03);
     }
+
     .featured-card img {
       width: 100%;
       height: 200px;
       object-fit: cover;
     }
+
     .featured-card .content {
       padding: 15px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
+
     .featured-card h4 {
       margin: 0 0 10px 0;
       color: #065f46;
+      font-size: 1.1em;
     }
+
     .featured-card p {
-      font-size: 20px;
+      font-size: 0.95em;
       color: #334155;
+      line-height: 1.5;
     }
-   footer {
+
+    footer {
       background-color: #166534;
       color: white;
       text-align: center;
       padding: 20px;
       margin-top: 40px;
     }
+
     @media (max-width: 768px) {
-      .categories, .featured-grid {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+
+      .pesquisa {
+        margin-top: 10px;
+      }
+
+      .featured-grid {
         flex-direction: column;
         align-items: center;
       }
+
       .featured-card {
-        max-width: 90%;
+        max-width: 100%;
       }
     }
   </style>
 </head>
 <body>
 
- <header>
+  <header>
     <div class="basico">
       <a href="index.html">
-      <img src="logo.png" alt="Logo do site">
+        <img src="logo.png" alt="Logo do site">
       </a>
       <h1>BLOG DO LUPIO</h1>
     </div>
@@ -170,7 +204,6 @@
   </header>
 
   <div class="container">
-    <!-- Conteúdos em destaque -->
     <section class="featured-section" aria-label="Conteúdos em destaque">
       <h2>Destaques da Semana</h2>
       <div class="featured-grid">
@@ -179,8 +212,7 @@
           <img src="bacterias.jpeg" alt="Feira">
           <div class="content">
             <h4>Bactérias que Aumentam a Produtividade das Plantas</h4>
-            <p>Pesquisadores brasileiros descobriram cepas de bactérias benéficas capazes de estimular o crescimento de raízes e melhorar a absorção de nutrientes em culturas como o milho, soja e feijão. 
-              Essas bactérias fixadoras de nitrogênio reduzem a necessidade de fertilizantes químicos e contribuem para uma agricultura mais sustentável e de baixo custo.</p>
+            <p>Pesquisadores brasileiros descobriram cepas de bactérias que estimulam o crescimento de raízes e a absorção de nutrientes.</p>
           </div>
         </div>
 
@@ -188,24 +220,20 @@
           <img src="sementes.jpg" alt="Trator no campo">
           <div class="content">
             <h4>Sementes Inteligentes com Sensor de Umidade</h4>
-            <p>Cientistas da área de tecnologia agrícola desenvolveram sementes com micro-sensores integrados que detectam níveis de umidade e temperatura no solo. Isso permite ao produtor saber o momento 
-              exato para irrigar e acompanhar o desenvolvimento inicial da planta em tempo real, otimizando recursos hídricos e aumentando a taxa de germinação.</p>
+            <p>Novas sementes com sensores detectam umidade e temperatura do solo, otimizando irrigação e melhorando a germinação.</p>
           </div>
         </div>
 
         <div class="featured-card" tabindex="0">
           <img src="fotohort.webp" alt="Aperto de mãos">
           <div class="content">
-            <h4>Agricultura Vertical com Energia Solar no Campo</h4>
-            <p>A união de painéis solares com sistemas de cultivo vertical tem se mostrado promissora em propriedades rurais. A tecnologia permite que produtores cultivem hortaliças, frutas e até plantas 
-              medicinais em estruturas verticais usando energia solar. Isso economiza espaço, reduz o consumo de água em até 90% e possibilita colheitas o ano todo, mesmo em áreas com solos pobres ou 
-              escassez de terra.</p>
+            <h4>Agricultura Vertical com Energia Solar</h4>
+            <p>Estruturas verticais e energia solar permitem produção eficiente o ano todo, economizando água e espaço.</p>
           </div>
         </div>
 
       </div>
     </section>
-
   </div>
 
   <footer>
@@ -213,3 +241,4 @@
   </footer>
 </body>
 </html>
+
